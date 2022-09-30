@@ -7,9 +7,12 @@ while True:
         numbers = [float(value) for value in input().split(",")]
 
         numbers.sort()
-        mid_value = int(len(numbers))
+        if(len(numbers)%2 ==0):
+            value = (numbers[(len(numbers)/2) -0.5] + numbers[(len(numbers)/2)+0.5] )/2
+        else:
+            value = numbers[len(numbers)/2]
     except ValueError:
         print("Some input could not be converted to a number!")
     else:
         break
-print(numbers[mid_value])
+print(value)
